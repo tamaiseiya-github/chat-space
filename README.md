@@ -39,7 +39,6 @@ Column|Type|Options|
 ### group-users（中間）テーブル
 Column|Type|Options|
 |------|----|-------|
-|id|integer|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
 
