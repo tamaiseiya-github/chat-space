@@ -17,7 +17,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|group|reference|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :group-users
@@ -27,7 +27,7 @@ DB設計
 ### messageテーブル
 Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
