@@ -1,56 +1,47 @@
 DB設計
-## membersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|mail|string|null: false|
+|mail|string|null: false, unique: true|
+|password|string|null: false|
 
 ### Association
-- has_many :groups, through: members
+- has_many :groups, through: group-users
 - has_many :messages
-- has_many :members
+- has_many :group-users
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 ### Association
-- has_many :members
-- has_many :users
+- has_many :group-users
+- has_many :users, through: :group-users
+- has_many :messages
 
 ### messageテーブル
 Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
 |image|string|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
 
-### group-users
+### group-users（中間）テーブル
 Column|Type|Options|
 |------|----|-------|
 |id|integer|
-|user_id|references|
-|group_id|references|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
