@@ -9,7 +9,7 @@ DB設計
 |password|string|null: false|
 
 ### Association
-- has_many :groups, through: group-users
+- has_many :group, through: group-users
 - has_many :messages
 - has_many :group-users
 
