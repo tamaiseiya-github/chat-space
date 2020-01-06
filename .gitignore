@@ -15,5 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-# 末尾に次の記述を追加　画像がGitHubにコミットされない様にするために
+# 末尾に次の記述を追加画像がGitHubにコミットされない様にするために
 public/uploads/*
+
+secrets.yml
