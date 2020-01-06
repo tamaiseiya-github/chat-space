@@ -1,0 +1,49 @@
+.side-bar {
+  float: left;
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  color: #ffffff;
+  font-weight: bold;
+  .top {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__name{
+      font-size: 16px;
+      padding-left: 20px;
+    }
+    &__icon{
+      padding-right: 20px;
+      display: flex;
+      justify-content: flex-end;
+      i {
+        padding-left: 5px;
+        color: #ffffff;
+      }
+    }
+  }
+  .bottom {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    position: relative;
+    &__group {
+      position: absolute;
+      margin: auto;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__new {
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
+
+    }
+  }
+}
