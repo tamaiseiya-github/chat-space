@@ -2,35 +2,21 @@
   .top
     .top__left-box
       .top__left-box__group-name
-        g group
+        = @group.name
       .top__left-box__members
-        tamai
+        ="Member:" + @group.users.pluck(:name ).join(", ")
     .top__edit-btn
-      = link_to 'Edit','#'
+      = link_to edit_group_path(current_user) do
+        = "Edit"
   .middle
     .messages
-      .messages__message
-        .messages__message__info
-          .messages__message__info__member
-            toga
-          .messages__message__info__date
-            2020/01/06(mon) 17:43:01
-        .messages__message__text
-          good evening
-      .messages__message
-        .messages__message__info
-          .messages__message__info__member
-            yamada
-          .messages__message__info__date
-            2020/01/06(mon) 16:55:00
-        .messages__message__text
-          It's been raining since morning
+      = render @messages
   .bottom
     .form
-      %form.new_message
-        .input-box
-          %input{type: "text", class: "input-box__text",placeholder: "Please type a message "}
-          %label{class: "input-box__image"}
-            = icon('fas', 'image')
-            %input{type: "file",class: "input-box__image__file"}
-        %input{type: "submit", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

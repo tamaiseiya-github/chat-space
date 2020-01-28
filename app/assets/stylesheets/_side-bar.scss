@@ -27,14 +27,12 @@
   .bottom {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    position: relative;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
     &__group {
-      position: absolute;
-      margin: auto;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 0;
+      padding: 20px 20px 0 20px;
       &__name {
         font-size: 15px;
         margin-bottom: 5px;
