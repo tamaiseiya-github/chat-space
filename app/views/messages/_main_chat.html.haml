@@ -4,7 +4,7 @@
       .top__left-box__group-name
         = @group.name
       .top__left-box__members
-        ="Member:" + @group.users.pluck(:name ).join(", ")
+        ="Member:" + @group.users.pluck(:name).join(", ")
     .top__edit-btn
       = link_to edit_group_path(current_user) do
         = "Edit"
