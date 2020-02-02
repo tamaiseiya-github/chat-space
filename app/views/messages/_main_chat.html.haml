@@ -5,7 +5,6 @@
         = @group.name
       .top__left-box__members
         ="Member:" + @group.users.pluck(:name).join(", ")
-        -# "頭に表示したい文字列" + モデル名.users tableへのアソシエーション.pluck(:取り出したいカラム).join("取り出した値の区切り文字")
     .top__edit-btn
       = link_to edit_group_path(current_user) do
         = "Edit"

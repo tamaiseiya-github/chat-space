@@ -39,6 +39,7 @@
   }
   .middle {
     height: calc(100vh - 100px - 90px);
+    overflow: scroll;
     .messages {
       padding: 35px;
       &__message{
