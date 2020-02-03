@@ -40,29 +40,30 @@
   .middle {
     height: calc(100vh - 100px - 90px);
     overflow: scroll;
-    padding: 35px;
-    .message{
-      margin-bottom: 46px;
-      &__info{
-        display: flex;
-        justify-content: start;
-        &__member{
-          color: #333333;
-          font-size: 16px;
+    .messages {
+      padding: 35px;
+      &__message{
+        margin-bottom: 46px;
+        &__info{
+          display: flex;
+          justify-content: start;
+          &__member{
+            color: #333333;
+            font-size: 16px;
+          }
+          &__date{
+            color: #999999;
+            font-size: 12px;
+            margin-left: 10px;
+          }
         }
-        &__date{
-          color: #999999;
-          font-size: 12px;
-          margin-left: 10px;
+        &__text{
+          color: #434a54;
+          font-size: 14px;
+          margin-top: 12px;
         }
-      }
-      &__text{
-        color: #434a54;
-        font-size: 14px;
-        margin-top: 12px;
-      }
   }
-  
+  }
 
   }
   .bottom {
