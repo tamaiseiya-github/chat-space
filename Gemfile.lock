@@ -508,7 +508,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
-  font-awesome-sass
   erb2haml
   factory_girl_rails (~> 4.0)
   faker
